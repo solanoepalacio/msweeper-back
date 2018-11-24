@@ -19,7 +19,6 @@ function loadRoutes (dirname) {
   return dirs.reduce((router, filename) => {
       const routeFilePath = path.join(dirname, filename);
       const route = require(routeFilePath);
-      console.log('adding route', route.prefix);
       router.use(route.prefix, route.handler);
       return router;
   }, Router());

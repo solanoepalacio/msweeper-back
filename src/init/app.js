@@ -4,6 +4,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const getConfig = require('shared/config').getInstance;
 
@@ -12,6 +13,7 @@ const app = express();
 function initApp (router) {
   const config = getConfig();
   return new Promise(function(resolve, reject) {
+    app.use(morgan('short'));
 
     app.use(corsMiddleware);
 
@@ -23,7 +25,9 @@ function initApp (router) {
 
     app.use(errorMiddleware);
 
-    app.use('/static', express.static(path.resolve('src/public')));
+    const publicDir = path.resolve('src/public');
+    console.log('pub', publicDir);
+    app.use(express.static('public'));
 
     const { port, host } = config.app;
 
