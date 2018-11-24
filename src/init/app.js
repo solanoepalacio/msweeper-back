@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -20,6 +22,8 @@ function initApp (router) {
     app.use(notFoundMiddleware);
 
     app.use(errorMiddleware);
+
+    app.use('/static', express.static(path.resolve('src/public')));
 
     const { port, host } = config.app;
 

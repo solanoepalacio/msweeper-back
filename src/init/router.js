@@ -5,7 +5,7 @@ const path = require('path');
 
 const express = require('express');
 
-const loadRoutes = require('routes/loadRoutes');
+const loadRoutes = require('routes/_loadRoutes');
 
 const routesBaseDir = path.resolve('src/routes');
 
