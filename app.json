@@ -1,0 +1,11 @@
+{
+  "name": "deviget-minesweeper",
+  "description": "basic minesweeper game for coding challenge",
+  "repository": "https://github.com/solanoepalacio/msweeper-back",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["nodejs", "minesweeper"],
+  "image": "heroku/nodejs",
+  "env": {
+    "NODE_ENV": "src/"
+  }
+}

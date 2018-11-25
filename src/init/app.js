@@ -15,6 +15,10 @@ function initApp (router) {
   return new Promise(function(resolve, reject) {
     app.use(morgan('short'));
 
+    const publicDir = path.resolve('src/public');
+
+    app.use("/static", express.static(publicDir));
+
     app.use(corsMiddleware);
 
     app.use(bodyParser.json());
@@ -24,10 +28,6 @@ function initApp (router) {
     app.use(notFoundMiddleware);
 
     app.use(errorMiddleware);
-
-    const publicDir = path.resolve('src/public');
-    console.log('pub', publicDir);
-    app.use(express.static('public'));
 
     const { port, host } = config.app;
 
