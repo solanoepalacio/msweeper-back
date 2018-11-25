@@ -6,6 +6,6 @@
   "keywords": ["nodejs", "minesweeper"],
   "image": "heroku/nodejs",
   "env": {
-    "NODE_ENV": "src/"
+    "NODE_PATH": "src/"
   }
 }

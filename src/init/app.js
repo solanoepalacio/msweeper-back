@@ -29,9 +29,9 @@ function initApp (router) {
 
     app.use(errorMiddleware);
 
-    const { port, host } = config.app;
+    const { port } = config.app;
 
-    app.listen(port, host, function (error){
+    app.listen(port, function (error){
       if (error) reject(error);
       else console.log('Server is listening on port:', port);
     });
