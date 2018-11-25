@@ -29,7 +29,8 @@ function initApp (router) {
 
     app.use(errorMiddleware);
 
-    const { port } = config.app;
+    // heroku dynamically sets the port and passes it as a env var
+    const port = process.env.PORT || config.app.port;
 
     app.listen(port, function (error){
       if (error) reject(error);
